@@ -1,4 +1,4 @@
-import 'package:borardgame/provider/grid_state_pvd.dart';
+import 'package:borardgame/provider/tile_state_pvd.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

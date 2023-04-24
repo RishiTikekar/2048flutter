@@ -1,4 +1,5 @@
 import 'package:borardgame/screens/grid_screen.dart';
+import 'package:borardgame/screens/select_grid_size.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: '2048',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: GridScreen(),
+      home: const SelectGridSize(),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'dart:developer' as dev;
 import 'dart:ui';
 
 import 'package:borardgame/constants.dart';
-import 'package:borardgame/provider/grid_state_pvd.dart';
+import 'package:borardgame/provider/tile_state_pvd.dart';
 import 'package:borardgame/widgets/grid_background.dart';
 import 'package:borardgame/widgets/swiper_handler.dart';
 import 'package:borardgame/widgets/tile_widgets.dart';
@@ -106,25 +106,18 @@ class _GameControlsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tileStatePvd = context.watch<TileStatePvd>();
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Row(
             children: [
-              Consumer<TileStatePvd>(
-                builder: (context, tileStatePvd, child) => Text(
-                  "Score:  ${tileStatePvd.score}",
-                  style: TextStyle(fontSize: 24),
-                ),
+              Text(
+                "Score:  ${tileStatePvd.score}",
+                style: const TextStyle(fontSize: 24),
               ),
-              Spacer(),
-              FloatingActionButton(
-                backgroundColor: Colors.green,
-                tooltip: 'Restart',
-                onPressed: () {},
-                child: Icon(Icons.replay_outlined),
-              ),
+              const Spacer(),
             ],
           ),
         ),
